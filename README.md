@@ -26,15 +26,16 @@ See https://howistart.org/posts/elixir/1
   >
 
   # Run the transfers between doors
-  iex(room1@BrianMBP)6> Portal.push_right(p)
+  iex(room1@laptop)6> Portal.push_right(p)
   #Portal<
-    {:green, :room1@BrianMBP} <=> {:red, :room1@BrianMBP}
+    {:green, :room1@laptop} <=> {:red, :room1@laptop}
          ['h', 'e', 'l', 'l'] <=> ['o']
   >
 
-  iex(room1@BrianMBP)7> Portal.push_right(p)
+  iex(room1@laptop)7> Portal.push_right(p)
   #Portal<
-    {:green, :room1@BrianMBP} <=> {:red, :room1@BrianMBP}
+    {:green, :room1@laptop} <=> {:red, :room1@laptop}
+         ['h', 'e', 'l'] <=> ['l', 'o']
 
 ```
 
