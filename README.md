@@ -1,6 +1,42 @@
-# Portal
+# Portal - An Elixir Inroduction
 
-**TODO: Add description**
+See https://howistart.org/posts/elixir/1
+
+## Usage
+
+```
+  # Start the interactive shell from the project's root directory
+  $ iex --sname room1 --cookie secret -S mix
+
+  # Initialize the Door processes you are going to use
+  iex(room1@laptop)> Portal.shoot(:green)
+  {:ok, #PID<0.95.0>}
+  iex(room1@laptop)> Portal.shoot(:red)
+  {:ok, #PID<0.97.0>}
+
+  # Start the Portal transfer with configuration
+  iex(room1@laptop)3> green = {:green, :"room1@laptop"}
+  {:green, :room1@laptop}
+  iex(room1@laptop)4> red = {:red, :"room1@laptop"}
+  {:red, :room1@laptop}
+  iex(room1@laptop)5> p = Portal.transfer(green, red, ['h','e','l','l','o'])
+  #Portal<
+    {:green, :room1@laptop} <=> {:red, :room1@laptop}
+    ['h', 'e', 'l', 'l', 'o'] <=> []
+  >
+
+  # Run the transfers between doors
+  iex(room1@BrianMBP)6> Portal.push_right(p)
+  #Portal<
+    {:green, :room1@BrianMBP} <=> {:red, :room1@BrianMBP}
+         ['h', 'e', 'l', 'l'] <=> ['o']
+  >
+
+  iex(room1@BrianMBP)7> Portal.push_right(p)
+  #Portal<
+    {:green, :room1@BrianMBP} <=> {:red, :room1@BrianMBP}
+
+```
 
 ## Installation
 
